@@ -5,37 +5,6 @@ class StreamListener(tweepy.StreamListener):
         self.api = api
 
     """
-        @param tweet: The tweet to parse
-
-        Extracts hashtags from a tweet.
-
-        @return list: The list of hashtags in the tweet
-    """
-    def find_hashtags(self, tweet):
-        text = tweet.text
-        split = text.split(" ")
-        hashtag_list = []
-        for word in split:
-            if (word.startswith("#")):
-                hashtag_list.append(word)
-        return hashtag_list
-
-    """
-        @param hashtag_list: The list of hashtags in a tweet
-
-        Linear search implementation to find the target hashtag in
-        the list of hashtags found within a tweet
-
-        @return boolean: returns whether the target hashtag was found
-    """
-    def parse_hashtags(self, hashtag_list):
-        for hashtag in hashtag_list:
-            if (hashtag == settings.delete_hashtag):
-                return True
-        return False
-
-
-    """
         @param status: The tweet that the listener found
 
         Listener function. Will check hashtags and delete

@@ -1,7 +1,6 @@
 import tweepy #tweepy api wrapper
 import settings #settings module
 import keys
-from modules import tableaccess
 from modules import streamlistener
 
 def main():
@@ -15,7 +14,7 @@ def main():
 
     """
         Instantiate listener and filter incoming tweets to
-        only select from a particular user
+        only select from a particular set of tags
     """
     myStreamListener = streamlistener.StreamListener(api = api)
     myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)

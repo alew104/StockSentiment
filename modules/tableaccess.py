@@ -19,3 +19,6 @@ class TableAccess():
 
     def query_table(self, table_name):
         pass
+
+    def delete_entity(self, table_name):
+        pass
