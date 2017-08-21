@@ -1,9 +1,8 @@
 import tweepy #tweepy api wrapper
 import settings #settings module
 import keys
-
-
-
+from modules import tableaccess
+from modules import streamlistener
 
 def main():
     """
@@ -18,9 +17,9 @@ def main():
         Instantiate listener and filter incoming tweets to
         only select from a particular user
     """
-    myStreamListener = StreamListener(api = api)
-    myStream = tweepy.Stream(auth = api.auth, listener=StreamListener)
-    myStream.filter(settings.stock_list)
+    myStreamListener = streamlistener.StreamListener(api = api)
+    myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)
+    myStream.filter(track=settings.stock_list)
 
 """
     Some weird python thing to make main work(?).
