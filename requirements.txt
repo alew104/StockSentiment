@@ -50,6 +50,8 @@ isodate==0.5.4
 keyring==10.4.0
 msrest==0.4.12
 msrestazure==0.4.11
+nltk==3.2.4
+numpy==1.13.1
 oauthlib==2.0.2
 pathlib2==2.3.0
 pycparser==2.18
