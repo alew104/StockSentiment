@@ -1,6 +1,7 @@
 import tweepy
 
-class StreamListener(tweepy.StreamListener):
+
+class StreamListener(tweepy.StreamListener):    
     def __init__(self, api):
         self.api = api
 

@@ -1,10 +1,14 @@
+# TODO:
+# DEFINE DATA SCHEMA
+# FINISH THIS WRAPPER module
+
 from azure.storage.table import TableService, Entity
 
 class TableAccess():
     def __init__(self, account, azurekey):
         self.account = account
         self.azurekey = azurekey
-        self.table_service = TableService(account_name = account, account_key = azurekey)
+        self.table_service = TableService(account_name=account, account_key=azurekey)
 
     def create_table(self, table_name):
         self.table_service.create_table(table_name)

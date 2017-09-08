@@ -1,5 +1,4 @@
-#Put your twitter application keys and access tokens here
-
+# Put your twitter application keys and access tokens here
 consumer_key = ""
 consumer_secret = ""
 access_token = ""
@@ -10,4 +9,4 @@ account_key = ""
 azurekey = ""
 
 # Stocks to follow
-stock_list = ["MSFT", "APPL"]
+stock_list = ["MSFT", "AAPL"]
