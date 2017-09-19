@@ -16,7 +16,7 @@ def main():
         Instantiate listener and filter incoming tweets to
         only select from a particular set of tags
     """
-    myStreamListener = streamlistener.StreamListener(api=api)
+    myStreamListener = streamlistener.StreamListener(api=api, account=keys.account_name, azurekey=keys.azurekey)
     myStream = tweepy.Stream(auth=api.auth, listener=myStreamListener)
     myStream.filter(track=settings.stock_list)
 

@@ -4,6 +4,7 @@
 
 from azure.storage.table import TableService, Entity
 
+
 class TableAccess():
     def __init__(self, account, azurekey):
         self.account = account

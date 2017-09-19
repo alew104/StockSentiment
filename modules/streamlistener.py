@@ -1,9 +1,13 @@
 import tweepy
+from vaderanalysis import SentimentAnalysis
+from tableaccess import TableAccess
 
 
-class StreamListener(tweepy.StreamListener):    
-    def __init__(self, api):
+class StreamListener(tweepy.StreamListener):
+    def __init__(self, api, account, azurekey):
         self.api = api
+        self.analyzer = SentimentAnalysis()
+        self.writer = TableAccess(account, azurekey)
 
     """
         @param status: The tweet that the listener found
@@ -12,7 +16,12 @@ class StreamListener(tweepy.StreamListener):
         if target hashtag is found
     """
     def on_status(self, status):
-        print (status.text)
+        score = self.analyzer.return_scores(status.text.encode('utf-8'))
+        print status.text
+        print score['neg']
+        print score['neu']
+        print score['pos']
+        #self.writer.write_to_table(score)
 
     def on_delete(self, status_id, user_id):
         """Called when a delete notice arrives for a status"""
