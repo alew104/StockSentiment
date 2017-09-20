@@ -1,3 +1,8 @@
+# TODO:
+# Figure out how to tell which tweet is to which company
+# write it to azure already
+# scores are in a dict, just for reference
+
 import tweepy
 from vaderanalysis import SentimentAnalysis
 from tableaccess import TableAccess
@@ -18,10 +23,10 @@ class StreamListener(tweepy.StreamListener):
     def on_status(self, status):
         score = self.analyzer.return_scores(status.text.encode('utf-8'))
         print status.text
-        print score['neg']
-        print score['neu']
-        print score['pos']
-        #self.writer.write_to_table(score)
+        neg = score['neg']
+        neu = score['neu']
+        pos = score['pos']
+        #self.writer.write_to_table(stock="STOCKHERE", pos, neu, neg)
 
     def on_delete(self, status_id, user_id):
         """Called when a delete notice arrives for a status"""

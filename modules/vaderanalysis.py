@@ -1,11 +1,8 @@
 # TODO:
-# BUILD NLP ANALYSIS
-# HAVE IT WRITE TO AZURE
-# look into vader and how to extract scores
-# look into vader in general
-# kms
+# Document this short module
+# lol
+
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-from tableaccess import TableAccess
 
 
 class SentimentAnalysis():
