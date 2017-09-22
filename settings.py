@@ -9,4 +9,4 @@ account_key = ""
 azurekey = ""
 
 # Stocks to follow
-stock_list = ["MSFT", "AAPL"]
+stock_list = ["MSFT", "AAPL", "JNJ"]

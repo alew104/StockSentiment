@@ -26,6 +26,12 @@ class StreamListener(tweepy.StreamListener):
         neg = score['neg']
         neu = score['neu']
         pos = score['pos']
+        print "pos: "
+        print score['pos']
+        print "neu: "
+        print neu
+        print "neg: "
+        print neg
         #self.writer.write_to_table(stock="STOCKHERE", pos, neu, neg)
 
     def on_delete(self, status_id, user_id):
